@@ -1,0 +1,19 @@
+(kicad_sch
+	(version 20231120)
+	(generator "eeschema")
+	(generator_version "8.0")
+	(uuid "8ed38441-7d4e-4e89-870f-07e11c6dce38")
+	(paper "A4")
+	(title_block
+		(title "Reference PCB Template")
+		(date "2024-11-07")
+		(rev "1.0")
+		(company "RK Design")
+	)
+	(lib_symbols)
+	(sheet_instances
+		(path "/"
+			(page "1")
+		)
+	)
+)

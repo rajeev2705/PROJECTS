@@ -1,0 +1,19 @@
+07-02 10:16:30 com_github_MitjaNemec_Archive3DModels.action_archive_3d_models 220:Plugin executed on: 'win32'
+07-02 10:16:30 com_github_MitjaNemec_Archive3DModels.action_archive_3d_models 221:Plugin executed with python version: '3.11.5 (main, May 10 2024, 05:24:12) [MSC v.1939 64 bit (AMD64)]'
+07-02 10:16:30 com_github_MitjaNemec_Archive3DModels.action_archive_3d_models 222:KiCad build version: 8.0.3
+07-02 10:16:30 com_github_MitjaNemec_Archive3DModels.action_archive_3d_models 223:Plugin version: 1.0.12
+
+07-02 10:16:30 com_github_MitjaNemec_Archive3DModels.action_archive_3d_models 228:Screen sizes: [wx.Size(1366, 768)]
+07-02 10:16:30 com_github_MitjaNemec_Archive3DModels.action_archive_3d_models 235:Dialog size: wx.Size(213, 81)
+07-02 10:16:30 com_github_MitjaNemec_Archive3DModels.action_archive_3d_models 237:Char size: 15
+07-02 10:17:08 com_github_MitjaNemec_Archive3DModels.archive_3d_models 26:Starting to archive 3D models
+07-02 10:17:08 com_github_MitjaNemec_Archive3DModels.action_archive_3d_models 276:Fatal error when creating an instance of Archie 3D models
+Traceback (most recent call last):
+  File "C:\Users\Rajeev\Documents\KiCad\8.0\3rdparty\plugins\com_github_MitjaNemec_Archive3DModels\action_archive_3d_models.py", line 269, in Run
+    not_copied_list = archiver.archive_3d_models(board, remap_missing_models=amm)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Rajeev\Documents\KiCad\8.0\3rdparty\plugins\com_github_MitjaNemec_Archive3DModels\archive_3d_models.py", line 38, in archive_3d_models
+    os.makedirs(model_folder_path)
+  File "<frozen os>", line 215, in makedirs
+  File "<frozen os>", line 225, in makedirs
+OSError: [WinError 123] The filename, directory name, or volume label syntax is incorrect: 'D:\\PCB DESIGN\\Gituploader\\PCB_PROJECTS\\Smart_Grid_Prototype\\SchematicF:'

@@ -1,0 +1,29 @@
+### Footprint positions - created on 2026-04-13T23:41:55+0530 ###
+### Printed by KiCad version 9.0.7
+## Unit = mm, Angle = deg.
+## Side : All
+# Ref     Val                          Package                                                       PosX       PosY       Rot  Side
+C1        0u1                          C_0603_1608Metric_Pad1.08x0.95mm_HandSolder               184.1750   -70.1325  -90.0000  top
+C2        10u                          C_0603_1608Metric_Pad1.08x0.95mm_HandSolder               181.6650   -70.1325  -90.0000  top
+C3        0u1                          C_0603_1608Metric_Pad1.08x0.95mm_HandSolder               179.5500   -81.4000   90.0000  top
+C4        10u                          C_0603_1608Metric_Pad1.08x0.95mm_HandSolder               182.0600   -81.4000   90.0000  top
+C5        0u1                          C_0603_1608Metric_Pad1.08x0.95mm_HandSolder               193.2000   -99.2000    0.0000  top
+C6        10u                          C_0603_1608Metric_Pad1.08x0.95mm_HandSolder               193.2000  -101.7100    0.0000  top
+D1        SS14                         D_SMA                                                     188.3250   -67.2700   90.0000  top
+D2        SS14                         D_SMA                                                     190.4000   -73.8000    0.0000  top
+D3        SS14                         D_SMA                                                     186.9500   -99.4000    0.0000  top
+J1        USB_C_Receptacle_USB2.0_16P  USB_C_Receptacle_GCT_USB4105-xx-A_16P_TopMnt_Horizontal   183.1250   -57.6700  180.0000  top
+J14       Conn_01x06                   inmp441                                                   240.4000  -136.1849   90.0000  top
+J16       Conn_01x02                   LIMIT_SWITCH                                              221.3500   -69.8500   90.0000  top
+L1        22uH                         L_10.4x10.4_H4.8                                          185.1500   -91.0000    0.0000  top
+R1        5.1k                         R_0603                                                    184.3750   -66.1200  -90.0000  top
+R2        5.1k                         R_0603                                                    181.3750   -66.1200  -90.0000  top
+R3        10k                          R_0603_1608Metric_Pad0.98x0.95mm_HandSolder               198.8875   -63.0000    0.0000  top
+R4        2k                           R_0603_1608Metric_Pad0.98x0.95mm_HandSolder               191.4000   -66.8000  -90.0000  top
+R5        10k                          R_0603_1608Metric_Pad0.98x0.95mm_HandSolder               193.8875   -63.0000  180.0000  top
+R6        10k                          R_0603_1608Metric_Pad0.98x0.95mm_HandSolder               184.5500   -81.4000   90.0000  top
+R7        10k                          R_0603_1608Metric_Pad0.98x0.95mm_HandSolder               193.1500   -94.4000   90.0000  top
+R8        10k                          R_0603_1608Metric_Pad0.98x0.95mm_HandSolder               193.1500   -90.4875   90.0000  top
+U1        TP4056-42-ESOP8              SOIC-8-1EP_3.9x4.9mm_P1.27mm_EP2.41x3.3mm_ThermalVias     197.3250   -67.6950    0.0000  top
+U2        MT3608                       SOT-23-6                                                  188.4125   -82.2000  180.0000  top
+## End

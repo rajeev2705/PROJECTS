@@ -1,0 +1,9 @@
+### Footprint positions - created on 2025-09-24T09:22:43+0200 ###
+### Printed by KiCad version 9.0.2
+## Unit = mm, Angle = deg.
+## Side : bottom
+# Ref     Val                    Package                                                PosX       PosY       Rot  Side
+BT1       S2B-PH-SM4-TB(LF)(SN)  JST_PH_S2B-PH-SM4-TB_1x02-1MP_P2.00mm_Horizontal    98.8400   -94.0400    0.0000  bottom
+U7        BME688                 BME680-PSON80P300X300X100-8N                       104.9400   -35.1800    0.0000  bottom
+U8        RAK3172                RAK3172                                            119.4000   -88.4500    0.0000  bottom
+## End

@@ -1,0 +1,191 @@
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font-sans)}
+.wrap{padding:1rem 0;max-width:700px}
+.header{display:flex;align-items:center;gap:12px;margin-bottom:1.5rem}
+.badge{background:#E6F1FB;color:#0C447C;font-size:11px;font-weight:500;padding:3px 8px;border-radius:20px}
+.tabs{display:flex;gap:4px;margin-bottom:1.5rem;border-bottom:0.5px solid var(--color-border-tertiary);padding-bottom:0}
+.tab{padding:7px 14px;font-size:13px;cursor:pointer;border:none;background:none;color:var(--color-text-secondary);border-bottom:2px solid transparent;margin-bottom:-0.5px;transition:color .15s}
+.tab.active{color:var(--color-text-primary);font-weight:500;border-bottom:2px solid #378ADD}
+.tab:hover:not(.active){color:var(--color-text-primary)}
+.phase{display:none}
+.phase.active{display:block}
+.step-card{background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);padding:1rem 1.25rem;margin-bottom:10px;cursor:pointer;transition:border-color .15s}
+.step-card:hover{border-color:var(--color-border-secondary)}
+.step-card.done{border-color:#1D9E75;background:#E1F5EE}
+.step-head{display:flex;align-items:flex-start;gap:10px}
+.check{width:20px;height:20px;border-radius:50%;border:1.5px solid var(--color-border-secondary);flex-shrink:0;margin-top:1px;display:flex;align-items:center;justify-content:center;transition:all .15s}
+.step-card.done .check{background:#1D9E75;border-color:#1D9E75}
+.checkmark{display:none;width:10px;height:10px}
+.step-card.done .checkmark{display:block;fill:white}
+.step-title{font-size:14px;font-weight:500;color:var(--color-text-primary)}
+.step-sub{font-size:12px;color:var(--color-text-secondary);margin-top:2px}
+.step-card.done .step-title{color:#085041}
+.step-card.done .step-sub{color:#0F6E56}
+.detail{display:none;margin-top:10px;padding-top:10px;border-top:0.5px solid var(--color-border-tertiary)}
+.detail.open{display:block}
+.detail ul{padding-left:16px;font-size:13px;color:var(--color-text-secondary);line-height:1.7}
+.detail ul li{margin-bottom:2px}
+.tools{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.tool-tag{font-size:11px;padding:2px 8px;border-radius:12px;font-weight:500}
+.t-hw{background:#FAEEDA;color:#633806}
+.t-sw{background:#EEEDFE;color:#3C3489}
+.t-tip{background:#EAF3DE;color:#27500A}
+.progress-bar{height:4px;background:var(--color-border-tertiary);border-radius:2px;margin-bottom:1.25rem;overflow:hidden}
+.progress-fill{height:100%;background:#1D9E75;border-radius:2px;transition:width .3s}
+.stats{display:flex;gap:8px;margin-bottom:1rem}
+.stat{flex:1;background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:10px 12px;text-align:center}
+.stat-n{font-size:20px;font-weight:500;color:var(--color-text-primary)}
+.stat-l{font-size:11px;color:var(--color-text-secondary);margin-top:2px}
+.reset-btn{font-size:12px;padding:6px 14px;margin-top:0.5rem;cursor:pointer}
+.legend{display:flex;gap:12px;margin-bottom:1rem;flex-wrap:wrap}
+.leg-item{display:flex;align-items:center;gap:5px;font-size:12px;color:var(--color-text-secondary)}
+.leg-dot{width:8px;height:8px;border-radius:2px}
+</style>
+
+<div class="wrap">
+  <h2 class="sr-only" style="position:absolute;left:-9999px">PCB Reverse Engineering Toolkit — interactive checklist</h2>
+
+  <div class="header">
+    <div>
+      <div style="font-size:18px;font-weight:500;color:var(--color-text-primary)">PCB Reverse Engineering Toolkit</div>
+      <div style="font-size:13px;color:var(--color-text-secondary);margin-top:2px">Step-by-step interactive checklist · click steps to expand & mark done</div>
+    </div>
+  </div>
+
+  <div class="stats">
+    <div class="stat"><div class="stat-n" id="done-count">0</div><div class="stat-l">Completed</div></div>
+    <div class="stat"><div class="stat-n" id="total-count">0</div><div class="stat-l">Total steps</div></div>
+    <div class="stat"><div class="stat-n" id="pct">0%</div><div class="stat-l">Progress</div></div>
+  </div>
+  <div class="progress-bar"><div class="progress-fill" id="prog-fill" style="width:0%"></div></div>
+
+  <div class="legend">
+    <div class="leg-item"><div class="leg-dot" style="background:#BA7517"></div>Hardware tool</div>
+    <div class="leg-item"><div class="leg-dot" style="background:#7F77DD"></div>Software tool</div>
+    <div class="leg-item"><div class="leg-dot" style="background:#639922"></div>Pro tip</div>
+  </div>
+
+  <div class="tabs" id="tabs"></div>
+  <div id="phases-container"></div>
+
+  <button class="reset-btn" onclick="resetAll()">Reset all</button>
+</div>
+
+<script>
+const phases=[
+  {label:"1 · Visual inspection",steps:[
+    {title:"Photograph both sides",sub:"High-res before touching anything",tools:[{t:"Camera / phone macro",c:"t-hw"},{t:"Good lighting",c:"t-hw"}],tips:["Use a lightbox or diffused light to eliminate reflections","Shoot at 45° angle to catch silkscreen text","Take photos before and after any cleaning"]},
+    {title:"Clean the PCB",sub:"Remove flux, dust, and corrosion",tools:[{t:"IPA 99%",c:"t-hw"},{t:"Ultrasonic cleaner",c:"t-hw"},{t:"Soft brush",c:"t-hw"}],tips:["Use 99% IPA, not 70% — water content damages some components","Ultrasonic cleaner works best for heavy corrosion","Allow full drying before powering on"]},
+    {title:"Count layers",sub:"Edge inspection under light",tools:[{t:"Bright torch",c:"t-hw"},{t:"Digital caliper",c:"t-hw"}],tips:["Shine a torch through the PCB edge — count copper layers visible","Common counts: 2, 4, 6, 8 layers","Measure board thickness: 1.6mm is typical for 2-layer"]},
+    {title:"Identify all component types",sub:"ICs, passives, connectors, crystals",tools:[{t:"Magnifying glass / microscope",c:"t-hw"}],tips:["Sort by: ICs, resistors, capacitors, inductors, transistors, diodes, connectors","Note any unusual or potted components","Record all visible markings before removal"]}
+  ]},
+  {label:"2 · Component ID",steps:[
+    {title:"Read IC markings",sub:"Manufacturer + part number lookup",tools:[{t:"USB microscope",c:"t-hw"},{t:"Datasheet sites",c:"t-sw"}],tips:["Sites: datasheetarchive.com, alldatasheet.com, octopart.com","For erased/sanded ICs try power-on side-channel analysis","Note die markings too — OEM parts often remark standard ICs"]},
+    {title:"Measure passive values",sub:"R, C, L values in-circuit",tools:[{t:"LCR meter",c:"t-hw"},{t:"Multimeter",c:"t-hw"}],tips:["Disconnect power first — always","In-circuit readings can be inaccurate due to parallel paths","Desolder one leg of component for accurate measurement","SMD codes: 3-digit = 1%, 4-digit = 0.1% tolerance"]},
+    {title:"Identify power rails",sub:"VCC, GND, and regulated voltages",tools:[{t:"Multimeter",c:"t-hw"},{t:"KiCad / EasyEDA",c:"t-sw"}],tips:["GND planes are usually large copper pours","Look for LDO/buck regulators to find regulated rails","Common rails: 3.3V, 5V, 12V, 1.8V, VBAT","Check datasheet of main IC to confirm rail voltages"]},
+    {title:"Map connectors & interfaces",sub:"USB, UART, SPI, I2C, JTAG etc.",tools:[{t:"Logic analyzer",c:"t-hw"},{t:"Sigrok / PulseView",c:"t-sw"}],tips:["Look for test pads near edges — often UART TX/RX/GND","JTAG pinouts: TDI, TDO, TCK, TMS, nTRST, GND","Expose board to known signals and capture with logic analyzer"]}
+  ]},
+  {label:"3 · Netlist extraction",steps:[
+    {title:"Scan / photograph at high DPI",sub:"Minimum 600 DPI per layer",tools:[{t:"Flatbed scanner",c:"t-hw"},{t:"GIMP / Photoshop",c:"t-sw"}],tips:["A flatbed scanner gives better results than a camera for flat tracing","Use scan registration marks so layers align","Scan each copper layer separately after milling/sanding"]},
+    {title:"Trace copper layers",sub:"Manually or with software",tools:[{t:"PCBGOGo / PCBScan",c:"t-sw"},{t:"KiCad",c:"t-sw"},{t:"FlatCAM",c:"t-sw"}],tips:["For simple 2-layer boards, manual tracing in KiCad works well","Color-code each layer (red top, blue bottom, yellow inner)","Use grid snapping: 0.1mm or 0.05mm for fine pitch"]},
+    {title:"Decapsulate if needed",sub:"Expose die for IC reverse engineering",tools:[{t:"Fuming nitric acid",c:"t-hw"},{t:"Hot plate",c:"t-hw"}],tips:["Only for fully epoxy-molded ICs where markings are gone","Requires chemical safety: fume hood, PPE, neutralizer ready","Alternative: X-ray imaging for non-destructive die inspection"]},
+    {title:"Generate netlist",sub:"Export from traced schematic",tools:[{t:"KiCad",c:"t-sw"},{t:"Altium / Eagle",c:"t-sw"}],tips:["Assign net names based on function: VCC, GND, SPI_CLK etc.","Run ERC (electrical rules check) to catch floating nets","Cross-reference against IC datasheet pin functions"]}
+  ]},
+  {label:"4 · Schematic capture",steps:[
+    {title:"Place all components in EDA tool",sub:"Match footprint to physical pads",tools:[{t:"KiCad (free)",c:"t-sw"},{t:"EasyEDA (free)",c:"t-sw"},{t:"Altium",c:"t-sw"}],tips:["KiCad is the best free option with large component library","Match footprint pad count and pitch to actual PCB","Use consistent reference designators: U1, R1, C1..."]},
+    {title:"Wire up schematic",sub:"Connect nets using netlist as guide",tools:[{t:"KiCad Eeschema",c:"t-sw"}],tips:["Add power symbols for VCC / GND nets first","Use net labels rather than wires for long connections — cleaner schematic","Group related circuits into hierarchical sheets for large boards"]},
+    {title:"Annotate values & part numbers",sub:"Complete BOM data",tools:[{t:"Octopart / Mouser",c:"t-sw"}],tips:["Link each symbol to a real manufacturer part number","Add datasheet URLs to component properties","Export BOM from KiCad in CSV for easy ordering"]},
+    {title:"DRC / design rule check",sub:"Validate schematic correctness",tools:[{t:"KiCad ERC",c:"t-sw"}],tips:["Fix all unconnected pin warnings","Check for power pins not driven by a supply symbol","Run the netlist import into PCB editor to verify footprint matches"]}
+  ]},
+  {label:"5 · Validation & testing",steps:[
+    {title:"Power-on with current limiting",sub:"Prevent damage during first power-up",tools:[{t:"Bench PSU (CC/CV)",c:"t-hw"}],tips:["Set current limit to ~50-100mA first","Ramp voltage slowly while watching current draw","Thermal camera helps identify hot spots from shorts"]},
+    {title:"Probe known signals",sub:"Confirm schematic accuracy",tools:[{t:"Oscilloscope",c:"t-hw"},{t:"Logic analyzer",c:"t-hw"}],tips:["Start with clock signals — easy to identify by frequency","Capture UART boot log for firmware clues","Use a logic analyzer to decode I2C/SPI/UART automatically"]},
+    {title:"Compare against reference board",sub:"If a known-good unit is available",tools:[{t:"Multimeter",c:"t-hw"}],tips:["Measure resistance/voltage at key test points on both boards","Swap ICs one at a time to isolate faults","Compare boot logs from serial ports"]},
+    {title:"Document & export",sub:"Finalize schematic, PCB, and BOM",tools:[{t:"KiCad",c:"t-sw"},{t:"PDF / Gerber",c:"t-sw"}],tips:["Export schematic as PDF with full title block","Generate Gerber files to allow PCB reproduction","Archive high-res layer photos alongside the schematic files"]}
+  ]}
+];
+
+const tabsEl=document.getElementById('tabs');
+const cont=document.getElementById('phases-container');
+let state={};
+
+phases.forEach((ph,pi)=>{
+  const tab=document.createElement('button');
+  tab.className='tab'+(pi===0?' active':'');
+  tab.textContent=ph.label;
+  tab.onclick=()=>switchTab(pi);
+  tabsEl.appendChild(tab);
+
+  const div=document.createElement('div');
+  div.className='phase'+(pi===0?' active':'');
+  div.id='phase-'+pi;
+
+  ph.steps.forEach((s,si)=>{
+    const id=`${pi}-${si}`;
+    state[id]=false;
+    const card=document.createElement('div');
+    card.className='step-card';
+    card.id='card-'+id;
+    card.innerHTML=`
+      <div class="step-head" onclick="toggleDetail('${id}')">
+        <div class="check" id="chk-${id}">
+          <svg class="checkmark" viewBox="0 0 10 10"><polyline points="1.5,5 4,7.5 8.5,2.5" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div style="flex:1">
+          <div class="step-title">${s.title}</div>
+          <div class="step-sub">${s.sub}</div>
+        </div>
+        <div style="font-size:18px;color:var(--color-text-secondary);padding-left:8px" id="arr-${id}">›</div>
+      </div>
+      <div class="detail" id="det-${id}">
+        <ul>${s.tips.map(t=>`<li>${t}</li>`).join('')}</ul>
+        <div class="tools">${s.tools.map(t=>`<span class="tool-tag ${t.c}">${t.t}</span>`).join('')}</div>
+        <button style="margin-top:10px;font-size:12px;padding:5px 12px;cursor:pointer" onclick="markDone('${id}')">Mark complete</button>
+      </div>`;
+    div.appendChild(card);
+  });
+  cont.appendChild(div);
+});
+
+document.getElementById('total-count').textContent=Object.keys(state).length;
+
+function switchTab(pi){
+  document.querySelectorAll('.tab').forEach((t,i)=>t.className='tab'+(i===pi?' active':''));
+  document.querySelectorAll('.phase').forEach((p,i)=>p.className='phase'+(i===pi?' active':''));
+}
+
+function toggleDetail(id){
+  const det=document.getElementById('det-'+id);
+  const arr=document.getElementById('arr-'+id);
+  const open=det.classList.toggle('open');
+  arr.style.transform=open?'rotate(90deg)':'';
+}
+
+function markDone(id){
+  state[id]=true;
+  const card=document.getElementById('card-'+id);
+  card.classList.add('done');
+  updateStats();
+}
+
+function resetAll(){
+  Object.keys(state).forEach(id=>{
+    state[id]=false;
+    const card=document.getElementById('card-'+id);
+    if(card)card.classList.remove('done');
+  });
+  updateStats();
+}
+
+function updateStats(){
+  const done=Object.values(state).filter(Boolean).length;
+  const total=Object.keys(state).length;
+  document.getElementById('done-count').textContent=done;
+  document.getElementById('pct').textContent=Math.round(done/total*100)+'%';
+  document.getElementById('prog-fill').style.width=(done/total*100)+'%';
+}
+
+updateStats();
+</script>

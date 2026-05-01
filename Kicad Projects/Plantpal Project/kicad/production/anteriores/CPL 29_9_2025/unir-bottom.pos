@@ -1,0 +1,10 @@
+### Footprint positions - created on 2025-09-29T10:16:55+0200 ###
+### Printed by KiCad version 9.0.2
+## Unit = mm, Angle = deg.
+## Side : bottom
+# Ref     Val                                          Package                                                PosX       PosY       Rot  Side
+BT1       S2B-PH-SM4-TB(LF)(SN)                        JST_PH_S2B-PH-SM4-TB_1x02-1MP_P2.00mm_Horizontal    98.8400   -94.0400    0.0000  bottom
+REF**     R_0805_2012Metric_Pad1.20x1.40mm_HandSolder  R_0805_2012Metric_Pad1.20x1.40mm_HandSolder        122.0800   -73.2600  180.0000  bottom
+U5        RAK3172                                      RAK3172                                            119.2500   -88.4200    0.0000  bottom
+U7        BME688                                       BME680-PSON80P300X300X100-8N                       104.9400   -35.1800    0.0000  bottom
+## End

@@ -1,0 +1,4 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "Blutooth Wireless Amplifier")(type "KiCad")(uri "R:/Kicad Projects/Blutooth Wireless Amplifier.pretty")(options "")(descr ""))
+)

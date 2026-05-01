@@ -1,0 +1,136 @@
+(kicad_sch
+	(version 20231120)
+	(generator "eeschema")
+	(generator_version "8.0")
+	(uuid "78522507-87c4-4635-a99e-e1bd853983fc")
+	(paper "A4")
+	(title_block
+		(title "ARDUINO UNO R3")
+		(date "2024-07-05")
+		(rev "1.0.0")
+		(company "RK DESIGN")
+	)
+	(lib_symbols)
+	(sheet
+		(at 213.36 34.29)
+		(size 62.23 44.45)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 255 30 57 1.0000)
+		)
+		(uuid "5467c8c1-fae0-45ce-a7f2-d965e1749a08")
+		(property "Sheetname" "MCU"
+			(at 213.36 33.5784 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(bold yes)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "MCU.kicad_sch"
+			(at 213.36 79.3246 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "arduino_uno_r3"
+				(path "/78522507-87c4-4635-a99e-e1bd853983fc"
+					(page "4")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 38.1 31.75)
+		(size 58.42 48.26)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 43 255 37 1.0000)
+		)
+		(uuid "ddc1f7c4-048b-446d-ab2a-c3a473ba1f11")
+		(property "Sheetname" "POWER SEC"
+			(at 38.1 31.0384 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(bold yes)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "PWR SEC.kicad_sch"
+			(at 38.1 80.5946 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "arduino_uno_r3"
+				(path "/78522507-87c4-4635-a99e-e1bd853983fc"
+					(page "2")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 119.38 33.02)
+		(size 83.82 45.72)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 255 207 108 1.0000)
+		)
+		(uuid "fd9c8267-1a8b-4daa-a65f-6848d4b74ccd")
+		(property "Sheetname" "USB SECTION"
+			(at 119.38 32.3084 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(bold yes)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "USB.kicad_sch"
+			(at 119.38 79.3246 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "arduino_uno_r3"
+				(path "/78522507-87c4-4635-a99e-e1bd853983fc"
+					(page "3")
+				)
+			)
+		)
+	)
+	(sheet_instances
+		(path "/"
+			(page "1")
+		)
+	)
+)

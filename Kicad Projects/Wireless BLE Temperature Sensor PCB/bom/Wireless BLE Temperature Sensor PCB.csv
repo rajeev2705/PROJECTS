@@ -1,0 +1,6 @@
+"Reference","Qty","Value","DNP","Exclude from BOM","Exclude from Board","Footprint","Datasheet","LCSC No."
+"BT1,BT2","2","Battery_Cell","","","","Battery:BatteryHolder_MYOUNG_BS-07-A1BJ001_CR2032","~","C5239862"
+"D1,D2","2","1N5819","","","","Diode_THT:D_DO-41_SOD81_P10.16mm_Horizontal","https://www.tme.eu/Document/1dcb17797cd83f32e896ece3030f14cc/1n5817-19.pdf","C402218"
+"H1,H2,H3,H4","4","MountingHole","","Excluded from BOM","","MountingHole:MountingHole_2.2mm_M2","~",""
+"U1","1","XIAO_ESP32C3","","","","SnapEDA_Footprints:MODULE_XIAO_ESP32C3","","C32713273"
+"U2","1","SHT4x","","","","Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical","https://sensirion.com/media/documents/33FD6951/624C4357/Datasheet_SHT4x.pdf","C32713270"

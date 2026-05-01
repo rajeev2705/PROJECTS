@@ -1,0 +1,459 @@
+(footprint "RFECA3216060A1T"
+	(version 20241229)
+	(generator "pcbnew")
+	(generator_version "9.0")
+	(layer "F.Cu")
+	(property "Reference" "AE1"
+		(at 0.255 -2.74 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(uuid "2d364af8-cb4a-4794-8293-32048d609fba")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "RFECA3216060A1T"
+		(at -0.004 -1.097 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(uuid "b38cfb84-3ffa-406c-85a0-0dd15d54defb")
+		(effects
+			(font
+				(size 0.3 0.3)
+				(thickness 0.075)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "d1c31aba-4cbe-4eb5-a41c-21305209dbbf")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "bdeb5dcb-5603-4519-9c0f-f14f1240e96e")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Distributor" "Digikey"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "920bceec-4650-46f9-a88b-a1820546a687")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Distributor Link" "https://www.digikey.com/en/products/detail/walsin-technology-corporation/RFECA3216060A1T/3877063"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "691427eb-7c1a-4729-94ec-1ae2b3159040")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Distributor Part Number" "1292-1035-1-ND"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "e724d562-45f1-4ea8-949c-9d447ac27355")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Manufacturer" "Walsin Technology Corporation"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "5f42dcdf-ea63-4bf3-98a6-4d923020e5bc")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Manufacturer Part Number" "RFECA3216060A1T"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "2e20b46a-952d-40fb-a02c-eb6f197b4f3a")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Part Description" "Chip RF Antenna 2.4GHz  2dBi"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "e1ad030f-2212-42bd-9754-ccb1e1a83511")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr smd)
+	(fp_poly
+		(pts
+			(xy -3.85 0.3) (xy -3.3 0.3) (xy -3.3 -0.3) (xy -3.85 -0.3)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill yes)
+		(layer "F.Mask")
+		(uuid "c813b086-e689-479e-b0e2-fdedf794f595")
+	)
+	(fp_poly
+		(pts
+			(xy -2.9 0.3) (xy -2.35 0.3) (xy -2.35 -0.3) (xy -2.9 -0.3)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill yes)
+		(layer "F.Mask")
+		(uuid "ff93e652-21f5-470b-b9bd-93e28020e33a")
+	)
+	(fp_poly
+		(pts
+			(xy -1.9 0.9) (xy -1.1 0.9) (xy -1.1 -0.9) (xy -1.9 -0.9)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill yes)
+		(layer "F.Mask")
+		(uuid "4152a92f-24a4-4d5c-95e5-cb9da747aa5b")
+	)
+	(fp_poly
+		(pts
+			(xy 0.8 -0.275) (xy 1.475 -0.275) (xy 1.475 -0.9) (xy 0.8 -0.9)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill yes)
+		(layer "F.Mask")
+		(uuid "47a77f05-ec2e-41db-8579-2c239c3f5591")
+	)
+	(fp_poly
+		(pts
+			(xy 0.8 0.9) (xy 1.475 0.9) (xy 1.475 0.275) (xy 0.8 0.275)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill yes)
+		(layer "F.Mask")
+		(uuid "bcfa7452-cef8-47a5-af75-aeac591f47fa")
+	)
+	(fp_line
+		(start -3.25 -0.35)
+		(end -2.95 -0.35)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "1468fb3d-1dac-4faf-b4e2-19079af7a2cb")
+	)
+	(fp_line
+		(start -2.95 0.35)
+		(end -3.25 0.35)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "924f6f74-894b-4bad-ba71-edf5bd7ab04e")
+	)
+	(fp_line
+		(start -2 -1)
+		(end 0.95 -1)
+		(stroke
+			(width 0.127)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "1225533e-208d-40cf-ba0d-4d09db9afa54")
+	)
+	(fp_line
+		(start -2 1)
+		(end -2 -1)
+		(stroke
+			(width 0.127)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "540e69bf-3f1c-4249-ad28-ee5ccbcd8409")
+	)
+	(fp_line
+		(start 0.6 1)
+		(end 0.6 -1)
+		(stroke
+			(width 0.127)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "3cc684d5-0d79-44ac-b663-7b795176a648")
+	)
+	(fp_line
+		(start 0.7 1)
+		(end 0.7 -1)
+		(stroke
+			(width 0.127)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "4fb08390-ba91-448a-aa45-fa1bcf3c8d9c")
+	)
+	(fp_line
+		(start 0.95 -1)
+		(end 1.6 -1)
+		(stroke
+			(width 0.127)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "a2c948f8-7bc6-401c-8e5b-2f93f23911e1")
+	)
+	(fp_line
+		(start 0.95 1)
+		(end -2 1)
+		(stroke
+			(width 0.127)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "7f6552b1-e85b-44bc-ac12-90076219ef35")
+	)
+	(fp_line
+		(start 1.6 -1)
+		(end 1.6 1)
+		(stroke
+			(width 0.127)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "8698aa95-805b-4fe1-8704-ebe9a569a282")
+	)
+	(fp_line
+		(start 1.6 1)
+		(end 0.95 1)
+		(stroke
+			(width 0.127)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "67f578b4-7443-40e9-9c97-c12434dcc633")
+	)
+	(fp_circle
+		(center 2.5 1)
+		(end 2.6 1)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(fill yes)
+		(layer "F.SilkS")
+		(uuid "481ec9f6-2276-43a3-978a-abeb6e4d39f2")
+	)
+	(fp_poly
+		(pts
+			(xy -3.85 0.2) (xy -3.35 0.2) (xy -3.35 -0.2) (xy -3.85 -0.2)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill yes)
+		(layer "F.Paste")
+		(uuid "621ade76-4781-4ae0-ab75-aea8f38be3c0")
+	)
+	(fp_poly
+		(pts
+			(xy -2.85 0.2) (xy -2.35 0.2) (xy -2.35 -0.2) (xy -2.85 -0.2)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill yes)
+		(layer "F.Paste")
+		(uuid "adefd324-4b03-4359-8b51-50e19fc7d724")
+	)
+	(fp_poly
+		(pts
+			(xy -1.875 0.85) (xy -1.15 0.85) (xy -1.15 -0.875) (xy -1.875 -0.875)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill yes)
+		(layer "F.Paste")
+		(uuid "8e904312-6906-4397-bf08-4e205ed07626")
+	)
+	(fp_poly
+		(pts
+			(xy 0.85 -0.3) (xy 1.425 -0.3) (xy 1.425 -0.875) (xy 0.85 -0.875)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill yes)
+		(layer "F.Paste")
+		(uuid "e0a12b03-ddfc-4db3-a3d8-fc247803e7c2")
+	)
+	(fp_poly
+		(pts
+			(xy 0.85 0.875) (xy 1.425 0.875) (xy 1.425 0.3) (xy 0.85 0.3)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill yes)
+		(layer "F.Paste")
+		(uuid "29a6165c-f566-4d62-a92d-ea40b6606398")
+	)
+	(fp_line
+		(start -3.85 -1.4)
+		(end -3.85 1.3)
+		(stroke
+			(width 0.01)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "59031ea6-ef69-46c6-90b0-728795b15c30")
+	)
+	(fp_line
+		(start -3.85 -1.4)
+		(end 4.15 -1.4)
+		(stroke
+			(width 0.01)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "05b15707-da01-47cb-8077-aaf352f7e8a4")
+	)
+	(fp_line
+		(start 4.15 -1.4)
+		(end 4.15 1.3)
+		(stroke
+			(width 0.01)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "ee8aba00-3ea6-46fd-9f5d-7d8d806c1c43")
+	)
+	(fp_line
+		(start 4.15 1.3)
+		(end -3.85 1.3)
+		(stroke
+			(width 0.01)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "9137d335-d6c3-4951-b5ee-f13f174eb486")
+	)
+	(fp_text user "${REFERENCE}"
+		(at 0.245 -2.74 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(uuid "9caba20e-95e8-4d19-9523-fe6f176a218b")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(pad "1" smd roundrect
+		(at 1.435 0.59)
+		(size 1.27 0.635)
+		(layers "F.Cu")
+		(roundrect_rratio 0.08)
+		(zone_connect 2)
+		(thermal_bridge_angle 45)
+		(uuid "54771401-64e0-4882-8f99-fadb064b19e6")
+	)
+	(pad "2" smd roundrect
+		(at 1.435 -0.59)
+		(size 1.27 0.635)
+		(layers "F.Cu")
+		(roundrect_rratio 0.08)
+		(zone_connect 2)
+		(thermal_bridge_angle 45)
+		(uuid "5e269e04-7e7c-4314-aa5d-03380f4253c3")
+	)
+	(pad "3" smd roundrect
+		(at -2.0025 0.0025 270)
+		(size 1.805 1.805)
+		(layers "F.Cu")
+		(roundrect_rratio 0.06350027701)
+		(thermal_bridge_angle 45)
+		(uuid "8de2dee3-95cd-4eeb-9d77-7e6d90dee698")
+	)
+	(pad "4" smd roundrect
+		(at -3.7 0 270)
+		(size 1.8 0.8)
+		(layers "F.Cu")
+		(roundrect_rratio 0.0635)
+		(zone_connect 2)
+		(thermal_bridge_angle 45)
+		(uuid "cc9c2073-f22d-4e3d-9745-f8e753eee913")
+	)
+	(embedded_fonts no)
+	(model "${KIPRJMOD}/library/3dmodels/ANT_16060A1T_WAL.step"
+		(offset
+			(xyz -0.2 0 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 0 0 180)
+		)
+	)
+)

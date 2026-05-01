@@ -1,0 +1,8 @@
+(sym_lib_table
+  (version 0)
+  (lib (name "ndp2016-pixmob-wristband-reverse-schematic-rescue")(type "Legacy")(uri "${KIPRJMOD}/ndp2016-pixmob-wristband-reverse-schematic-rescue.lib")(options "")(descr ""))
+  (lib (name "MC81F4204-VMR")(type "Legacy")(uri "${KIPRJMOD}/MC81F4204 VMR.lib")(options "")(descr ""))
+  (lib (name "at24c02")(type "Legacy")(uri "${KIPRJMOD}/at24c02.lib")(options "")(descr ""))
+  (lib (name "rgbled")(type "Legacy")(uri "${KIPRJMOD}/rgbled.lib")(options "")(descr ""))
+  (lib (name "ir")(type "Legacy")(uri "${KIPRJMOD}/ir.lib")(options "")(descr ""))
+)
